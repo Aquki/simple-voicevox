@@ -1,5 +1,10 @@
 # simple-voicevox
 a very simple Python script that talks with the voicevox API
+install requests library
+```python
+pip install requests
+```
+example for using the function
 ```python
 import voicevox
 
