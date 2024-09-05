@@ -1,2 +1,9 @@
 # simple-voicevox
-a very simple python script that talk with the voicevox api
+a very simple Python script that talks with the voicevox API
+```python
+import voicevox
+
+voicevox.handle("the voicevox ip", "the wav file name", "the text you want to enter in Japanese", "the character number")
+#example for actual use
+voicevox.handle("http://127.0.0.1:50021", "zanu", "よよだよ", 1)
+```
