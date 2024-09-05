@@ -3,9 +3,9 @@ import requests as re
 
 
 
-#the main handle function that contain all inforamtion
+#the main handle function that contains all information
 def handle(voicevox, name, text, speaker):
-    #check if the url work and set values and launch other function with thos values
+    #check if the URL works and set values and launch other functions with those values
     try:
         check = re.get(voicevox)
         if check.status_code == 404:
@@ -14,10 +14,10 @@ def handle(voicevox, name, text, speaker):
             send(query, synthesis, name, text, speaker)
 
     except re.exceptions.RequestException:
-        print("There is error druing the connection in the URL or VOICEVOX is not running")
+        print("There is error during the connection in the URL or VOICEVOX is not running")
         sys.exit()
 
-#the function that will send the request to VoiceVox api and return it and save it
+#the function that will send the request to VoiceVox API and return it and save it
 def send(query, synthesis, name, text, speaker):
     
     query_para = {"text": text, "speaker": speaker}
