@@ -3,10 +3,12 @@ import requests as re
 
 #a simple Python script that handles the Local VOICEVOX API and returns a wav output
 
+def main(text="こんばんわ", speaker=1, name="output", voicevox="http://127.0.0.1:50021"):
+    handle(text, speaker, name, voicevox)
 
 
 #the main handle function that contains all information
-def handle(text=None, speaker="1", name="output", voicevox="http://127.0.0.1:50021"):
+def handle(text=None, speaker=1, name="output", voicevox="http://127.0.0.1:50021"):
     #check if the host is working and set values and launch the send function with the values
     try:
         check_response = re.get(voicevox)
@@ -47,4 +49,5 @@ def save(name, result):
           w.write(result.content)
         print(f"file saved to {name}.wav")
 
-
+if __name__ == "__main__":
+    main()
