@@ -1,17 +1,17 @@
 import sys
 import requests as re
 
-#a simple python script that handle with the Local VOICEVOX API and return an wav output
+#a simple Python script that handles the Local VOICEVOX API and returns a wav output
 
 
 
-#the main handle function that contain all inforamtion
+#the main handle function that contains all information
 def handle(text=None, speaker="1", name="output", voicevox="http://127.0.0.1:50021"):
-    #check if the host is work and set values and launch the send function with the values
+    #check if the host is working and set values and launch the send function with the values
     try:
         check_response = re.get(voicevox)
 
-        if check_response.status_code == 404: #check if the host is ON with 404 staus code
+        if check_response.status_code == 404: #check if the host is ON with 404 status code
             print("VOICEVOX is up!")
             print("Sending the request...")
             query = f"{voicevox}/audio_query"
@@ -41,7 +41,7 @@ def send(query, synthesis, text, speaker, name):
         
 
 
-#simple save function to save the wav file
+#simple save function to save the wav file from the request
 def save(name, result):
         with open(f"{name}.wav", "wb") as w:
           w.write(result.content)
